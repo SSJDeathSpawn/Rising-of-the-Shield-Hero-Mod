@@ -20,6 +20,6 @@ public class ClientProxy implements IProxy{
 
     @Override
     public void registerItemRenderer(Item item, int meta, String variant, ResourceLocation name) {
-        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(name,variant));
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(name, variant));
     }
 }
