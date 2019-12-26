@@ -1,7 +1,7 @@
 [
 {
-  "modid": "${modid}",
-  "name": "${name}",
+  "modid": "shield",
+  "name": "The Rising of the Shield Hero Mod",
   "description": "This is a mod based on the anime, manga and light novel The Rising of the Shield Hero. It adds the ability to become the Shield Hero, Naofumi Iwatani and also includes the collection and absorption to obtain abilities that can make the shield item better.",
   "version": "${version}",
   "mcversion": "${mcversion}",
