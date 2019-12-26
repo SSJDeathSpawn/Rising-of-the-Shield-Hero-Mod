@@ -22,6 +22,6 @@ public class ItemShield extends Item implements IHasModel {
 
     @Override
     public void registerModels() {
-
+        ShieldHeroMod.proxy.registerItemRenderer(this, 0, "inventory", new ResourceLocation(Reference.MODID,"shield_normal"));
     }
 }
