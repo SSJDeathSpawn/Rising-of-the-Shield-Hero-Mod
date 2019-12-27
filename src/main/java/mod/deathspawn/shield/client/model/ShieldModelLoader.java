@@ -11,12 +11,12 @@ public class ShieldModelLoader implements ICustomModelLoader {
 
     @Override
     public boolean accepts(ResourceLocation modelLocation) {
-        return modelLocation.getResourceDomain().equals("shield") && modelLocation.getResourcePath().startsWith("models/item/shield_");
+        return modelLocation.getResourceDomain().equals("shield") && modelLocation.getResourcePath().startsWith("models/item/shield_P");
     }
 
     @Override
     public IModel loadModel(ResourceLocation modelLocation) throws Exception {
-        ModelShield modelShield = new ModelShield(modelLocation.getResourcePath().substring("models/item/shield_".length()));
+        ModelShield modelShield = new ModelShield(modelLocation.getResourcePath().substring("models/item/shield_P".length()));
         return (IModel)modelShield;
     }
 }

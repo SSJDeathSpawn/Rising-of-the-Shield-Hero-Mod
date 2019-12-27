@@ -17,6 +17,6 @@ public class ItemShield extends ItemBase {
     @Override
     public void registerModels() {
         ModelBakery.registerItemVariants(this, new ModelResourceLocation("shield:shield_normal", "inventory"), new ModelResourceLocation("shield:shield_normal_3d", "inventory"));
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, "shield_normal"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(new ResourceLocation(Reference.MODID, "shield_Pnormal"), "inventory")); // fallback, I guess..?
     }
 }
