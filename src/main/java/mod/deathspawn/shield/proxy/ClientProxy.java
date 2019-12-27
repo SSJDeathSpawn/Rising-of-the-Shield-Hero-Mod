@@ -18,9 +18,7 @@ public class ClientProxy implements IProxy{
 
     @Override
     public void preInit() {
-        ModelLoaderRegistry.registerLoader(new ShieldModelLoader());
         ShieldHeroMod.logger.info("Registering Items");
-        ModelBakery.registerItemVariants(ModItems.shield, new ModelResourceLocation("shield:shield_normal", "inventory"), new ModelResourceLocation("shield:shield_normal_3d", "inventory"));
     }
 
     @Override

@@ -1,10 +1,12 @@
 package mod.deathspawn.shield.handlers;
 
+import mod.deathspawn.shield.client.model.ShieldModelLoader;
 import mod.deathspawn.shield.init.ModItems;
-import mod.deathspawn.shield.lib.IHasModel;
+import mod.deathspawn.shield.items.ItemBase;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -24,10 +26,9 @@ public class RegistryHandler {
 
     @SubscribeEvent
     public static void onModelRegistry(ModelRegistryEvent event) {
+        ModelLoaderRegistry.registerLoader(new ShieldModelLoader());
         for(Item item: ModItems.ITEMS) {
-            if(item instanceof IHasModel) {
-                ((IHasModel) item).registerModels();
-            }
+            ((ItemBase)item).registerModels();
         }
     }
 
