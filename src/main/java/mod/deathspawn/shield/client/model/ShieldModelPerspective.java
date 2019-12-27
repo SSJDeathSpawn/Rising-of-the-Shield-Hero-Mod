@@ -1,6 +1,5 @@
 package mod.deathspawn.shield.client.model;
 
-import com.google.common.collect.ImmutableList;
 import mod.deathspawn.shield.ShieldHeroMod;
 import mod.deathspawn.shield.lib.Reference;
 import net.minecraft.block.state.IBlockState;
@@ -8,16 +7,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.BakedItemModel;
-import net.minecraftforge.client.model.BakedModelWrapper;
-import net.minecraftforge.client.model.PerspectiveMapWrapper;
 import net.minecraftforge.common.model.TRSRTransformation;
 import org.apache.commons.lang3.tuple.Pair;
 
-import javax.annotation.Nullable;
 import javax.vecmath.Matrix4f;
 import java.util.ArrayList;
 import java.util.List;

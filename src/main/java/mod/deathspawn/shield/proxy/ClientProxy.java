@@ -18,7 +18,6 @@ public class ClientProxy implements IProxy{
 
     @Override
     public void preInit() {
-        ShieldHeroMod.logger.info("Registering Items");
     }
 
     @Override

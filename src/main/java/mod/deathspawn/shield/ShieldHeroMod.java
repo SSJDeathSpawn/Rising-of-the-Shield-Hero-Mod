@@ -30,7 +30,6 @@ public class ShieldHeroMod {
     @EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
         proxy.preInit();
-
     }
 
     @EventHandler
