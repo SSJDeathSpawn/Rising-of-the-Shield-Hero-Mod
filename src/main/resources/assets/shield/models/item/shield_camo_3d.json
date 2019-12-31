@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/cube",
 	"textures": {
-		"0": "shield:items/shield_normal_3d",
-		"particle": "shield:items/shield_normal_3d"
+		"0": "shield:items/shield_camo_3d",
+		"particle": "shield:items/shield_camo_3d"
 	},
 	"elements": [
 		{

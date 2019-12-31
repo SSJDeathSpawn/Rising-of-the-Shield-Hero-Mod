@@ -9,7 +9,6 @@ import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformT
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.model.TRSRTransformation;
 import org.apache.commons.lang3.tuple.Pair;
 
 import javax.vecmath.Matrix4f;
@@ -21,9 +20,11 @@ public class ShieldModelPerspective implements IBakedModel {
     String shieldName;
     ModelResourceLocation GUIMRL;
     ModelResourceLocation normalMRL;
+    ItemOverrideList overrides;
 
-    public ShieldModelPerspective(String shieldName) {
+    public ShieldModelPerspective(String shieldName, ItemOverrideList overrides) {
         this.shieldName = shieldName;
+        this.overrides = overrides;
         GUIMRL = new ModelResourceLocation(new ResourceLocation(Reference.MODID,"shield_" + this.shieldName),"inventory");
         normalMRL = new ModelResourceLocation(new ResourceLocation(Reference.MODID,"shield_" + this.shieldName + "_3d"),"inventory");
     }
@@ -35,23 +36,20 @@ public class ShieldModelPerspective implements IBakedModel {
 
         IBakedModel model;
         if(cameraTransformType != TransformType.GUI ) {
-            ShieldHeroMod.logger.info("Returning normal Model: " + normalMRL.toString());
             model =  manager.getModel(normalMRL);//Get held model
         }
         else {
-            ShieldHeroMod.logger.info("Returning GUI Model: " + GUIMRL.toString());
             model = manager.getModel(GUIMRL); //Get inventory model
         }
 
         //if(!(model instanceof IFlexibleBakedModel)) model = new IFlexibleBakedModel.Wrapper(model, DefaultVertexFormats.ITEM);
-
-        return Pair.of(model, TRSRTransformation.identity().getMatrix());
+        return model.handlePerspective(cameraTransformType);
     }
 
     @Override
     public boolean isAmbientOcclusion()
     {
-        return true;
+        return false;
     }
 
     @Override
@@ -89,4 +87,5 @@ public class ShieldModelPerspective implements IBakedModel {
     {
         return new ItemOverrideList(new ArrayList<ItemOverride>());
     }
+
 }
